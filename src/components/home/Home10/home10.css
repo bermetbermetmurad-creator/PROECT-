@@ -1,0 +1,107 @@
+.home10-container {
+  max-width: 1600px;
+  margin: auto;  
+  width: 100%;
+  background: #f8934a; 
+  border-radius: 20px;
+  padding: 40px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-image: url("../../../assets/тыква.png"); 
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.home10-content {
+  max-width: 450px;
+}
+
+.home10-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 25px 0;
+  line-height: 1.3;
+}
+
+.home10-form {
+  display: flex;
+  gap: 15px;
+}
+
+.home10-input {
+  width: 280px;
+  padding: 14px 16px;
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  background: #fff;
+  color: #444;
+}
+
+.home10-button {
+  background-color: #8FC19C; 
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 22px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.home10-button:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 1200px) {
+  .home10-title {
+    font-size: 28px;
+  }
+  .home10-input {
+    width: 220px;
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+  .home10-button {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home10-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .home10-form {
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .home10-input {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .home10-button {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home10-title {
+    font-size: 24px;
+  }
+  .home10-container {
+    padding: 20px 15px;
+  }
+}

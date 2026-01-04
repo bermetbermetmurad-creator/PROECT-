@@ -1,0 +1,126 @@
+.favorite-modal {
+  max-width: 1600px;
+  margin: auto;
+  position: fixed;
+  top: 0;
+  right: -420px;
+  width: 380px;
+  height: 100vh;
+  background: rgba(25, 35, 30, 0.9); /* темный с прозрачностью */
+  backdrop-filter: blur(12px);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+  color: #eafff2;
+  padding: 20px;
+  transition: 0.4s ease;
+  z-index: 1000;
+}
+
+.favorite-modal.open {
+  right: 0;
+  transition: 0.4s ease;
+}
+
+.favorite-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.favorite-header h3 {
+  color: #7dffb3;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.favorite-header button {
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #7dffb3;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.favorite-header button:hover {
+  transform: scale(1.2);
+  color: #22c55e;
+}
+
+.favorite-modal p {
+  text-align: center;
+  opacity: 0.7;
+  margin-top: 50px;
+  font-size: 16px;
+  color: #b6ffe0;
+}
+
+/* Список избранного */
+.favorite-modal ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.favorite-item {
+  display: flex;
+  align-items: center;
+  background: rgba(125, 255, 179, 0.08);
+  border-radius: 16px;
+  padding: 12px;
+  margin-bottom: 14px;
+  gap: 12px;
+  border: 1px solid rgba(125, 255, 179, 0.15);
+  animation: fadeIn 0.3s ease;
+}
+
+.favorite-item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #7dffb3;
+}
+
+.favorite-item div {
+  flex: 1;
+}
+
+.favorite-item p {
+  margin: 0;
+  font-weight: 600;
+  color: #eafff2;
+}
+
+.favorite-item span {
+  font-size: 13px;
+  opacity: 0.8;
+  color: #b6ffe0;
+}
+
+/* Кнопка удалить */
+.favorite-item button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #5dff9a;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.favorite-item button:hover {
+  transform: scale(1.2);
+  color: #22c55e;
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

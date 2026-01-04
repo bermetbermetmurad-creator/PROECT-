@@ -1,0 +1,46 @@
+.contact-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+.contact-container h2 {
+  color: #6cbf4e;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.contact-item {
+  margin-bottom: 15px;
+}
+
+.contact-label {
+  display: block;
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 5px;
+}
+
+.contact-info {
+  font-size: 16px;
+  color: #333;
+}
+
+.back-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #6cbf4e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.back-btn:hover {
+  background-color: #58a639;
+}

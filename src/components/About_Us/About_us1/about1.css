@@ -1,0 +1,23 @@
+.about1 {
+  max-width: 1700px;
+  margin: auto;
+  width: 100%;
+  height: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.about1-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about1-title {
+  position: absolute;
+  font-size: 42px;
+  font-weight: 600;
+  color: #1f4053;
+}

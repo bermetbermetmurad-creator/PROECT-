@@ -1,0 +1,47 @@
+.catalog2-container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.catalog2-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 35px;
+}
+
+.catalog2-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  position: relative;
+  text-align: center;
+}
+
+.catalog2-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #1e3f59;
+  color: #fff;
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.catalog2-img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: contain;
+  margin-top: 30px;
+}
+
+.catalog2-title {
+  margin-top: 15px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #2d2d2d;
+}

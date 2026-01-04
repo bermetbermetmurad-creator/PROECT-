@@ -1,0 +1,54 @@
+.NewWr-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.NewWr-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.NewWr-subtitle {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.NewWr-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.NewWr-card {
+  width: 220px;
+}
+
+.NewWr-card-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.NewWr-card-text {
+  font-size: 14px;
+}
+
+.NewWr-back {
+  padding: 12px 40px;
+  border: none;
+  background: #333;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.NewWr-back:hover {
+  background: #555;
+}

@@ -1,0 +1,63 @@
+.neww1 {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  color: #2c2c2c;
+  line-height: 1.7;
+}
+
+.neww1-title {
+  font-size: 34px;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #000000;
+}
+
+.neww1-intro {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.neww1-section {
+  margin-bottom: 30px;
+  padding: 22px;
+  background-color: #f4f7fb;
+  border-left: 4px solid #000000;
+  border-radius: 6px;
+}
+
+.neww1-section h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #104301;
+}
+
+.neww1-section p {
+  font-size: 16px;
+}
+
+.neww1-end {
+  margin-top: 30px;
+  font-size: 17px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.neww1-back {
+  display: block;
+  margin: 40px auto 0;
+  padding: 12px 32px;
+  font-size: 16px;
+  border: none;
+  background-color: #783305;
+  color: #ffffff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.neww1-back:hover {
+  background-color: #5a3d00;
+}

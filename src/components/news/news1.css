@@ -1,0 +1,20 @@
+.news1 {
+  max-width: 1600px;
+  margin: auto;
+  width: 100%;
+  height: 280px;
+  background: #f6f7f8;
+  background-image: url("../../assets/новости1.png"); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.news1-title {
+  font-size: 38px;
+  font-weight: 600;
+  color: #2f4f5a;
+}

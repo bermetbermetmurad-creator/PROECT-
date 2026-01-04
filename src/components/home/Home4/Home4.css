@@ -1,0 +1,162 @@
+.products-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.subtitle {
+  color: #888;
+  font-size: 14px;
+}
+
+.title {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* КАРТОЧКА */
+.product-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+
+.badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: #01ff66;
+  color: #fff;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  z-index: 2;
+}
+
+.product-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.product-img {
+  width: 100%;
+  height: 260px;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.1);
+}
+
+
+.product-actions {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+}
+
+.product-card:hover .product-actions {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.action-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: #04631d;
+  color: #333;
+  font-size: 18px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: translateY(10px);
+  transition: 0.25s ease;
+}
+
+.product-card:hover .action-btn {
+  transform: translateY(0);
+}
+
+.action-btn:hover {
+  background: #00ff11;
+  color: #fff;
+}
+
+/* НАЗВАНИЕ */
+.product-title {
+  margin-top: 16px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.primary-btn.green {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  margin-top: 50px;
+  padding: 14px 38px;
+
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+
+  border-radius: 999px;
+  text-decoration: none;
+
+  box-shadow: 0 12px 30px rgba(22, 163, 74, 0.35);
+  transition: all 0.3s ease;
+}
+
+/* hover */
+.primary-btn.green:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 35px rgba(22, 163, 74, 0.45);
+}
+
+/* active */
+.primary-btn.green:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 18px rgba(22, 163, 74, 0.3);
+}
+
+
+
+.loading {
+  text-align: center;
+  padding: 50px;
+  font-size: 18px;
+}

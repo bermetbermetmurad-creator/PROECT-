@@ -1,0 +1,133 @@
+.support2 {
+    max-width: 1600px;
+    margin: auto;
+  padding: 80px 6%;
+  font-family: "Segoe UI", sans-serif;
+  background: #f9fafb;
+}
+
+
+.support2-hero {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+.support2-hero-text h1 {
+  font-size: 48px;
+  color: #1f2937;
+  margin-bottom: 20px;
+}
+
+.support2-hero-text p {
+  font-size: 18px;
+  color: #4b5563;
+  max-width: 500px;
+}
+
+.support2-hero img {
+  width: 45%;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* FEATURES */
+.support2-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  margin-bottom: 90px;
+}
+
+.support2-card {
+  background: #ffffff;
+  padding: 35px 25px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.support2-card:hover {
+  transform: translateY(-8px);
+}
+
+.support2-icon {
+  font-size: 42px;
+  color: #2563eb;
+  margin-bottom: 15px;
+}
+
+.support2-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #1f2937;
+}
+
+.support2-card p {
+  font-size: 15px;
+  color: #6b7280;
+}
+
+/* INFO */
+.support2-info {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 70px;
+}
+
+.support2-info img {
+  width: 45%;
+  border-radius: 18px;
+}
+
+.support2-info h2 {
+  font-size: 34px;
+  color: #1f2937;
+  margin-bottom: 15px;
+}
+
+.support2-info p {
+  font-size: 17px;
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+.support2-back {
+  text-align: center;
+}
+
+.support2-back button {
+  padding: 14px 38px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.support2-back button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+}
+
+
+@media (max-width: 900px) {
+  .support2-hero,
+  .support2-info {
+    flex-direction: column;
+  }
+
+  .support2-hero img,
+  .support2-info img {
+    width: 100%;
+  }
+
+  .support2-hero-text h1 {
+    font-size: 38px;
+  }
+}
