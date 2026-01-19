@@ -8,7 +8,6 @@ const AboutCart2 = () => {
 
   return (
     <section className="support2">
-      {/* HERO */}
       <div className="support2-hero">
         <div className="support2-hero-text">
           <h1>Поддержка</h1>
@@ -23,7 +22,7 @@ const AboutCart2 = () => {
         />
       </div>
 
-      {/* FEATURES */}
+
       <div className="support2-features">
         <div className="support2-card">
           <FiHeadphones className="support2-icon" />

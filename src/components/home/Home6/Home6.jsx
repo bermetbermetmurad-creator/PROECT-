@@ -20,9 +20,11 @@ export default function Home6() {
         {[buter, buter1, buter2, buter3].map((img, i) => (
           <div className="home6-card" key={i}>
             <span className="tag">Масла</span>
+
             <div className="img-box">
               <img src={img} alt="product" />
             </div>
+
             <p className="product-text">Масло тыквенное, 250мл</p>
           </div>
         ))}

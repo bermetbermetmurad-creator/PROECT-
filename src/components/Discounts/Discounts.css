@@ -42,7 +42,6 @@
   color: #333;
 }
 
-
 .back-btn-wrapper {
   margin-top: 60px;
   text-align: center;
@@ -62,4 +61,73 @@
 .back-btn:hover {
   background: #2e7d32;
   color: #ffffff;
+}
+
+
+@media (max-width: 480px) {
+  .discounts-page {
+    padding: 40px 12px;
+  }
+
+  .discounts-section {
+    padding: 28px 20px;
+    border-radius: 14px;
+  }
+
+  .discounts-section h1 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .discounts-section h2 {
+    font-size: 20px;
+    margin: 32px 0 16px;
+  }
+
+  .discounts-section p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .discounts-section li {
+    font-size: 15px;
+  }
+
+  .back-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .discounts-page {
+    padding: 60px 16px;
+  }
+
+  .discounts-section {
+    padding: 40px 36px;
+  }
+
+  .discounts-section h1 {
+    font-size: 34px;
+  }
+
+  .discounts-section h2 {
+    font-size: 24px;
+  }
+
+  .discounts-section p {
+    font-size: 16px;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .discounts-section {
+    max-width: 900px;
+    padding: 50px;
+  }
 }

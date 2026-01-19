@@ -12,25 +12,16 @@ export default function Product() {
   const { addToCart } = useCart();
   const { addFavorite } = useFavorite();
 
-  const handleFavorite = () => {
-  addFavorite(product);
-};
-
-  const addProduct = () => {
-    addToCart(product);
-    toast.success("🛒 Товар добавлен в корзину!", {
-      position: "top-right",
-    });
-  };
-
   const [product, setProduct] = useState(null);
   const [gallery, setGallery] = useState([]);
   const [activeImage, setActiveImage] = useState("");
+  const [allProducts, setAllProducts] = useState([]);
 
   useEffect(() => {
     fetch(API_URL)
       .then(res => res.json())
       .then(data => {
+        setAllProducts(data);
         const current = data.find(item => item.id === id);
         if (!current) return;
 
@@ -38,20 +29,40 @@ export default function Product() {
         setActiveImage(current.avatar);
 
         const related = data
-          .filter(item => item.job === current.job)
+          .filter(item => item.job === current.job && item.id !== current.id)
           .slice(0, 4);
 
         setGallery(related);
       });
   }, [id]);
 
-if (!product) return <p className="loading-text">Загрузка...</p>;
+  const handleThumbClick = (item) => {
+    setProduct(item);
+    setActiveImage(item.img || item.avatar);
 
+    const related = allProducts
+      .filter(prod => prod.job === item.job && prod.id !== item.id)
+      .slice(0, 4);
+
+    setGallery(related);
+  };
+
+  const handleFavorite = () => {
+    addFavorite(product);
+  };
+
+  const addProduct = () => {
+    addToCart(product);
+    toast.success("Товар добавлен в корзину!", {
+      position: "top-right",
+    });
+  };
+
+  if (!product) return <p className="loading-text">Загрузка...</p>;
 
   return (
     <div className="product-page">
       <div className="product">
-
         <div className="product-images">
           <img
             src={activeImage}
@@ -63,12 +74,10 @@ if (!product) return <p className="loading-text">Загрузка...</p>;
             {gallery.map(item => (
               <img
                 key={item.id}
-                src={item.img}
+                src={item.img || item.avatar}
                 alt={item.name}
-                className={
-                  activeImage === item.img ? "thumb active" : "thumb"
-                }
-                onClick={() => setActiveImage(item.img)}
+                className={activeImage === (item.img || item.avatar) ? "thumb active" : "thumb"}
+                onClick={() => handleThumbClick(item)}
               />
             ))}
           </div>
@@ -79,8 +88,15 @@ if (!product) return <p className="loading-text">Загрузка...</p>;
           <span className="category">{product.job}</span>
 
           <p className="description">
-            {product.name} — качественный продукт категории «{product.job}».
-            Подходит для повседневного использования.
+            {product.name} — это качественный и надежный продукт из категории «{product.job}»,
+            созданный с вниманием к деталям и высоким стандартам качества.
+            Он отлично подходит для повседневного использования, обеспечивая комфорт,
+            удобство и долгий срок службы.
+            Продукт сочетает в себе современный дизайн и практичность,
+            благодаря чему станет отличным выбором как для личного использования,
+            так и в качестве подарка.
+            Выбирая {product.name}, вы получаете уверенность в качестве
+            и удовольствие от каждого дня использования.
           </p>
 
           <div className="actions">
@@ -92,7 +108,6 @@ if (!product) return <p className="loading-text">Загрузка...</p>;
             </button>
           </div>
         </div>
-
       </div>
     </div>
   );

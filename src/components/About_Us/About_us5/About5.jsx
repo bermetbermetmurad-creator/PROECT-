@@ -1,38 +1,30 @@
 import React, { useState } from "react";
 import "./about5.css";
-import emailjs from "emailjs-com";
 
 const About5 = () => {
   const [email, setEmail] = useState("");
+  const [showAlert, setShowAlert] = useState(false);
 
   const handleSubscribe = () => {
-    if (!email) {
-      alert("Пожалуйста, введите email!");
-      return;
-    }
+    if (!email) return;
 
+    setShowAlert(true);
+    setEmail("");
 
-    emailjs
-      .send(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",    
-        { user_email: email },  
-        "YOUR_PUBLIC_KEY"       
-      )
-      .then(
-        (result) => {
-          alert("Отправлено!");
-          setEmail(""); 
-        },
-        (error) => {
-          alert("Ошибка при отправке, попробуйте ещё раз.");
-          console.error(error.text);
-        }
-      );
+    setTimeout(() => {
+      setShowAlert(false);
+    }, 2500);
   };
 
   return (
     <div className="about5-container">
+
+      {showAlert && (
+        <div className="custom-alert">
+          <span>✅ ПОДПИСАНО</span>
+        </div>
+      )}
+
       <div className="about5-content">
         <h2 className="about5-title">
           Узнайте первыми<br />о новых акциях!

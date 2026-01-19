@@ -62,47 +62,64 @@
   background-color: #244a31;
 }
 
+
 @media (max-width: 1200px) {
   .muka-title {
     font-size: 32px;
   }
+
   .muka-intro {
     font-size: 16px;
   }
+
   .muka-block h2 {
     font-size: 20px;
   }
+
   .muka-block p {
     font-size: 15px;
   }
+
   .muka-end {
     font-size: 16px;
   }
+
   .muka-back {
     padding: 10px 28px;
     font-size: 15px;
   }
 }
 
+
 @media (max-width: 768px) {
   .muka {
     padding: 30px 15px;
   }
+
   .muka-title {
     font-size: 28px;
   }
+
   .muka-intro {
     font-size: 15px;
   }
+
+  .muka-block {
+    padding: 16px;
+  }
+
   .muka-block h2 {
     font-size: 18px;
   }
+
   .muka-block p {
     font-size: 14px;
   }
+
   .muka-end {
     font-size: 15px;
   }
+
   .muka-back {
     padding: 10px 25px;
     font-size: 14px;
@@ -113,23 +130,34 @@
   .muka {
     padding: 20px 10px;
   }
+
   .muka-title {
     font-size: 24px;
   }
+
   .muka-intro {
     font-size: 14px;
   }
+
+  .muka-block {
+    padding: 14px;
+  }
+
   .muka-block h2 {
     font-size: 16px;
   }
+
   .muka-block p {
     font-size: 13px;
   }
+
   .muka-end {
     font-size: 14px;
   }
+
   .muka-back {
-    padding: 8px 20px;
+    width: 100%;
+    padding: 10px;
     font-size: 13px;
   }
 }

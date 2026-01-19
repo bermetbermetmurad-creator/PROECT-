@@ -1,14 +1,14 @@
 .news3-container {
   max-width: 1600px;
-  margin: auto;  
+  margin: auto;
   width: 100%;
-  background: #f8934a; 
+  background: #f8934a;
   border-radius: 20px;
   padding: 40px 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-image: url("../../assets/тыква.png"); 
+  background-image: url("../../assets/тыква.png");
   background-size: cover;
   background-position: center;
   box-sizing: border-box;
@@ -43,7 +43,7 @@
 }
 
 .news3-button {
-  background-color: #8FC19C; 
+  background-color: #8FC19C;
   color: #fff;
   border: none;
   border-radius: 10px;
@@ -57,13 +57,111 @@
   opacity: 0.9;
 }
 
-@media (max-width: 768px) {
+
+
+.news3-alert {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #2e2e2e;
+  padding: 14px 22px;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 9999;
+  border-left: 5px solid #8FC19C;
+  animation: news3AlertIn 0.4s ease, news3AlertOut 0.4s ease 2.2s;
+}
+
+@keyframes news3AlertIn {
+  from {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes news3AlertOut {
+  to {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .news3-container {
+    padding: 35px 40px;
+  }
+
+  .news3-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 992px) {
   .news3-container {
     flex-direction: column;
     text-align: center;
+    gap: 25px;
+    padding: 32px 30px;
+  }
+
+  .news3-content {
+    max-width: 100%;
   }
 
   .news3-form {
     justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .news3-title {
+    font-size: 24px;
+  }
+
+  .news3-input,
+  .news3-button {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .news3-container {
+    padding: 25px 16px;
+    border-radius: 16px;
+  }
+
+  .news3-title {
+    font-size: 20px;
+    margin-bottom: 18px;
+  }
+
+  .news3-input,
+  .news3-button {
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+}
+
+
+@media (max-width: 600px) and (min-aspect-ratio: 3/4) {
+  .news3-container {
+    padding: 22px 16px;
+  }
+
+  .news3-form {
+    gap: 10px;
   }
 }

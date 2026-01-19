@@ -44,3 +44,48 @@
 .back-btn:hover {
   background-color: #58a639;
 }
+
+
+@media (max-width: 480px) {
+  .contact-container {
+    margin: 30px 12px;
+    padding: 20px;
+    max-width: 100%;
+    border-radius: 8px;
+  }
+
+  .contact-container h2 {
+    font-size: 20px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .contact-info {
+    font-size: 14px;
+  }
+
+  .back-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .contact-container {
+    margin: 40px auto;
+    padding: 24px;
+  }
+
+  .contact-container h2 {
+    font-size: 22px;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .contact-container {
+    max-width: 480px;
+  }
+}

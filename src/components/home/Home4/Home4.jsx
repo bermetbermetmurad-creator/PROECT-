@@ -12,8 +12,8 @@ export default function Home4() {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const { addToCart } = useCart(); // корзина
-  const { toggleFavorite, favorites } = useFavorite(); // избранное
+  const { addToCart } = useCart(); 
+  const { toggleFavorite, favorites } = useFavorite(); 
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -35,7 +35,6 @@ export default function Home4() {
 
   return (
     <div className="products-wrapper">
-      {/* ToastContainer для уведомлений */}
       <ToastContainer position="top-right" autoClose={2000} />
 
       <p className="subtitle">Продукты</p>
@@ -52,31 +51,24 @@ export default function Home4() {
               <div className="product-img-wrapper">
                 <img className="product-img" src={item.avatar} alt={item.name} />
 
-                {/* Иконки */}
+
                 <div className="product-actions">
-                  {/* 🛒 КОРЗИНА */}
+
                   <button
                     className="action-btn"
                     onClick={() => {
-                      addToCart(item); // Добавляем товар в корзину
-                      toast.success(`${item.name} добавлен в корзину!`); // уведомление
+                      addToCart(item); 
+                      toast.success(`${item.name} добавлен в корзину!`); 
                     }}
                     title="Добавить в корзину"
                   >
                     <FaShoppingCart />
                   </button>
 
-                  <button
-                    className={`action-btn ${favorites.some(fav => fav.id === item.id) ? "active" : ""}`}
-                    onClick={() => toggleFavorite(item)}
-                    title="В избранное"
-                  >
-                    <FaHeart />
-                  </button>
 
 
 
-                  {/* 🔍 ПОДРОБНЕЕ */}
+
                   <button
                     className="action-btn"
                     onClick={() => navigate(`/product/${item.id}`)}

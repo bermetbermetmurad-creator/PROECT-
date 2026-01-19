@@ -53,7 +53,7 @@ const Discounts = () => {
           цене и выстроить долгосрочные отношения с клиентами.
         </p>
 
-        {/* КНОПКА ВНИЗУ */}
+
         <div className="back-btn-wrapper">
           <button className="back-btn" onClick={() => navigate(-1)}>
             ← Назад

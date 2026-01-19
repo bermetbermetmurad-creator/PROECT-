@@ -5,6 +5,7 @@ import insta from '../../assets/insta.png'
 import fasbook from '../../assets/fasbook.png'
 import printerest from '../../assets/printerest.png'
 import twiter from '../../assets/twiter.png'
+import { Link } from 'react-router-dom';
 
 
 
@@ -59,7 +60,7 @@ const Footer = () => {
           <h3 className="section-title">Utility Pages</h3>
           <ul className="utility-list">
             <li><a href="#" className="utility-link">Style Guide</a></li>
-            <li><a href="#" className="utility-link">404 Not Found</a></li>
+            <li><Link to="mycomp" className="utility-link">404 Not Found</Link></li>
             <li><a href="#" className="utility-link">Password Protected</a></li>
             <li><a href="#" className="utility-link">Licences</a></li>
             <li><a href="#" className="utility-link">Changelog</a></li>

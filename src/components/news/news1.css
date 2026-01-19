@@ -17,4 +17,40 @@
   font-size: 38px;
   font-weight: 600;
   color: #2f4f5a;
+  text-align: center;
+  padding: 0 16px;
+  line-height: 1.2;
+}
+
+
+@media (max-width: 480px) {
+  .news1 {
+    height: 150px;
+  }
+
+  .news1-title {
+    font-size: 22px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .news1 {
+    height: 190px;
+  }
+
+  .news1-title {
+    font-size: 26px;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .news1 {
+    height: 230px;
+  }
+
+  .news1-title {
+    font-size: 32px;
+  }
 }

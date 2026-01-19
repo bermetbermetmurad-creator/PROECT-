@@ -76,3 +76,81 @@
 .back-btn:hover {
   background-color: #285e61;
 }
+
+
+@media (max-width: 1200px) {
+  .offers-title {
+    font-size: 2.2rem;
+  }
+
+  .offers-intro {
+    font-size: 1.05rem;
+  }
+}
+
+
+@media (max-width: 992px) {
+  .offers-grid {
+    gap: 24px;
+  }
+
+  .offer-img {
+    height: 180px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .offers-page {
+    padding: 30px 16px;
+  }
+
+  .offers-title {
+    font-size: 2rem;
+  }
+
+  .offers-intro {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .offer-img {
+    height: 170px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .offers-title {
+    font-size: 1.7rem;
+  }
+
+  .offers-intro {
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+  }
+
+  .offer-title {
+    font-size: 1.15rem;
+  }
+
+  .offer-desc {
+    font-size: 0.95rem;
+  }
+
+  .offer-img {
+    height: 160px;
+  }
+
+  .back-btn {
+    width: 100%;
+    padding: 12px 0;
+  }
+}
+
+
+@media (max-width: 600px) and (min-aspect-ratio: 3/4) {
+  .offers-grid {
+    gap: 20px;
+  }
+}

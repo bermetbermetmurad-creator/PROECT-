@@ -17,6 +17,8 @@ import AboutCart from "./components/AboutCart/AboutCart";
 import AboutCart1 from "./components/AboutCart/AboutCart1";
 import AboutCart2 from "./components/AboutCart/AboutCart2";
 import OffersPage from "./components/OffersPage/OffersPage";
+import MyComponent from "./components/MyComponent/MyComponent";
+import Checkout from "./components/Checkout";
 
 
 
@@ -105,7 +107,19 @@ export const muRouter = createBrowserRouter([
             {
                 path: 'product/:id',
                 element: <Product />
-            }
+            },
+            {
+                path: 'catalog',
+                element: <MyComponent />
+            },
+            {
+                path: 'mycomp',
+                element: <MyComponent />
+            },
+            {
+                path: '/checkout',
+                element: <Checkout/>
+            },   
         ]
     }
 ])

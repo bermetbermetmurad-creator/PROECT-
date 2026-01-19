@@ -5,10 +5,10 @@
   text-align: center;
   background: #ffffff;
   overflow: hidden;
-  background-image: url("../../../assets/top.png"); 
-  background-repeat: no-repeat;         
-  background-size: 100% auto;            
-  background-position: center top;      
+  background-image: url("../../../assets/top.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center top;
 }
 
 .home5-content {
@@ -29,6 +29,8 @@
   font-weight: 700;
   margin-bottom: 40px;
 }
+
+
 
 .review-block {
   max-width: 650px;
@@ -79,6 +81,7 @@
   width: 100%;
 }
 
+
 .stats {
   display: flex;
   justify-content: space-between;
@@ -111,97 +114,201 @@
   color: #666;
 }
 
+
+.star {
+  cursor: pointer;
+  font-size: 26px;
+  color: #d6d6d6;
+  transition: 0.2s;
+}
+
+.star.active {
+  color: #f6a623;
+  text-shadow: 0 0 8px rgba(246, 166, 35, 0.6);
+}
+
+.star:hover {
+  transform: scale(1.15);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #c8dfc8;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 10px 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dot.active {
+  background: #7bb081;
+  transform: scale(1.4);
+}
+
+
 @media (max-width: 1200px) {
   .home5-content {
     padding-top: 200px;
   }
+
   .subtitle {
     font-size: 20px;
   }
+
   .title {
     font-size: 28px;
   }
+
   .review-text {
     font-size: 14px;
   }
+
   .stars {
     font-size: 20px;
   }
+
   .stat-item {
     width: 130px;
     height: 130px;
     padding: 20px;
   }
+
   .stat-item h3 {
     font-size: 24px;
   }
+
   .stat-item p {
     font-size: 13px;
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
+  .home5 {
+    background-size: 120% auto;
+  }
+
+  .home5-content {
+    padding-top: 180px;
+  }
+}
+
+
+@media (max-width: 820px) {
   .home5-content {
     padding-top: 150px;
   }
+
   .subtitle {
     font-size: 18px;
   }
+
   .title {
     font-size: 24px;
   }
+
   .review-text {
     font-size: 13px;
   }
+
   .stars {
     font-size: 18px;
   }
+
   .stats {
     gap: 15px;
   }
+
   .stat-item {
     width: 120px;
     height: 120px;
     padding: 15px;
   }
+
   .stat-item h3 {
     font-size: 22px;
   }
+
   .stat-item p {
     font-size: 12px;
   }
 }
 
+
+@media (max-width: 600px) {
+  .home5 {
+    background-size: 140% auto;
+  }
+
+  .home5-content {
+    padding-top: 130px;
+  }
+
+  .title {
+    margin-bottom: 30px;
+  }
+}
+
+
 @media (max-width: 480px) {
   .home5-content {
     padding-top: 120px;
   }
+
   .subtitle {
     font-size: 16px;
   }
+
   .title {
     font-size: 20px;
   }
+
   .review-text {
     font-size: 12px;
   }
+
   .stars {
     font-size: 16px;
   }
+
   .stats {
     gap: 10px;
     flex-direction: column;
     align-items: center;
   }
+
   .stat-item {
     width: 100px;
     height: 100px;
     padding: 10px;
   }
+
   .stat-item h3 {
     font-size: 18px;
   }
+
   .stat-item p {
     font-size: 11px;
+  }
+}
+
+
+@media (max-width: 360px) {
+  .home5-content {
+    padding-top: 100px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .stat-item {
+    width: 90px;
+    height: 90px;
+  }
+
+  .stat-item h3 {
+    font-size: 16px;
   }
 }

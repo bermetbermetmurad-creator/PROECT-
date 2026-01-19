@@ -61,3 +61,91 @@
 .neww1-back:hover {
   background-color: #5a3d00;
 }
+
+@media (max-width: 1024px) {
+  .neww1 {
+    padding: 35px 20px;
+  }
+
+  .neww1-title {
+    font-size: 30px;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .neww1 {
+    padding: 30px 16px;
+  }
+
+  .neww1-title {
+    font-size: 26px;
+  }
+
+  .neww1-intro {
+    font-size: 16px;
+  }
+
+  .neww1-section {
+    padding: 18px;
+  }
+
+  .neww1-section h2 {
+    font-size: 20px;
+  }
+
+  .neww1-section p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .neww1 {
+    padding: 25px 14px;
+  }
+
+  .neww1-title {
+    font-size: 22px;
+    margin-bottom: 18px;
+  }
+
+  .neww1-intro {
+    font-size: 15px;
+    margin-bottom: 25px;
+  }
+
+  .neww1-section {
+    padding: 16px;
+    margin-bottom: 22px;
+  }
+
+  .neww1-section h2 {
+    font-size: 18px;
+  }
+
+  .neww1-section p {
+    font-size: 14px;
+  }
+
+  .neww1-end {
+    font-size: 15px;
+  }
+
+  .neww1-back {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 15px;
+  }
+}
+
+
+@media (max-width: 600px) and (min-aspect-ratio: 3/4) {
+  .neww1-section {
+    padding: 14px;
+  }
+
+  .neww1-title {
+    font-size: 24px;
+  }
+}

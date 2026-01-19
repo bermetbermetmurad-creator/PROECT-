@@ -17,7 +17,6 @@ const AboutCart = () => {
       </div>
 
       <div className="aboutcart-content">
-        {/* Оливковое масло */}
         <div className="aboutcart-item">
           <img
             src="https://images.unsplash.com/photo-1604909052743-94e838986d24"
@@ -30,7 +29,6 @@ const AboutCart = () => {
           </p>
         </div>
 
-        {/* Растительное масло */}
         <div className="aboutcart-item">
           <img
             src="https://www.65ymas.com/uploads/s1/30/93/07/estos-son-los-mejores-y-peores-aceites-de-oliva-del-supermercado_1_621x621.jpeg"

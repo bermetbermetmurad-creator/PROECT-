@@ -41,40 +41,123 @@
   opacity: 0.9;
 }
 
+
 @media (max-width: 1200px) {
   .home8-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 18px;
   }
+
   .home8-card {
     height: 320px;
   }
+
   .home8-label {
     font-size: 16px;
     padding: 12px 28px;
   }
 }
 
+
 @media (max-width: 800px) {
   .home8-container {
     grid-template-columns: 1fr;
     gap: 15px;
+    padding: 30px 15px;
   }
+
   .home8-card {
     height: 260px;
   }
+
   .home8-label {
     font-size: 14px;
     padding: 10px 24px;
   }
 }
 
+
 @media (max-width: 480px) {
   .home8-card {
     height: 200px;
   }
+
   .home8-label {
     font-size: 12px;
     padding: 8px 20px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .home8-card {
+    height: 230px;
+  }
+}
+
+
+@media (min-width: 600px) and (max-width: 820px) {
+  .home8-container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 35px 20px;
+  }
+
+  .home8-card {
+    height: 300px;
+  }
+
+  .home8-label {
+    font-size: 15px;
+  }
+}
+
+
+@media (min-width: 821px) and (max-width: 1368px) {
+  .home8-container {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 40px 30px;
+  }
+
+  .home8-card {
+    height: 340px;
+  }
+}
+
+
+@media (max-width: 900px) and (max-height: 600px) {
+  .home8-container {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 30px 12px;
+  }
+
+  .home8-card {
+    height: 220px;
+  }
+
+  .home8-label {
+    font-size: 13px;
+  }
+}
+
+
+@media (min-width: 1024px) and (max-height: 800px) {
+  .home8-container {
+    max-width: 1200px;
+  }
+
+  .home8-card {
+    height: 340px;
+  }
+}
+
+
+@media (min-width: 1280px) and (max-height: 900px) {
+  .home8-container {
+    max-width: 1400px;
+  }
+
+  .home8-card {
+    height: 360px;
   }
 }

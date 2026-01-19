@@ -44,21 +44,18 @@ return (
 
 <div className="NewWr-gallery">
 <div className="NewWr-card">
-{/* IMG: product 1 */}
 <img className="NewWr-card-img" src={oo2} alt="" />
 <p className="NewWr-card-text">Новый продукт</p>
 </div>
 
 
 <div className="NewWr-card">
-{/* IMG: product 2 */}
 <img className="NewWr-card-img" src={oo3} alt="" />
 <p className="NewWr-card-text">Свежая новинка</p>
 </div>
 
 
 <div className="NewWr-card">
-{/* IMG: product 3 */}
 <img className="NewWr-card-img" src={oo4} alt="" />
 <p className="NewWr-card-text">Новое поступление</p>
 </div>

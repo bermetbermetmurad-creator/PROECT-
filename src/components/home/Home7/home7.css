@@ -57,23 +57,29 @@
     gap: 30px;
     padding: 50px 20px;
   }
+
   .home7-title {
     font-size: 32px;
   }
+
   .home7-sub {
     font-size: 24px;
   }
+
   .home7-item h3 {
     font-size: 18px;
   }
+
   .home7-item p {
     font-size: 14px;
     max-width: 380px;
   }
+
   .home7-img {
     height: 400px;
   }
 }
+
 
 @media (max-width: 800px) {
   .home7-root {
@@ -82,46 +88,140 @@
     gap: 25px;
     padding: 40px 15px;
   }
+
   .home7-img,
   .home7-content {
     width: 100%;
   }
+
   .home7-img {
     height: 300px;
   }
+
   .home7-title {
     font-size: 28px;
   }
+
   .home7-sub {
     font-size: 20px;
   }
+
   .home7-item h3 {
     font-size: 16px;
   }
+
   .home7-item p {
     font-size: 13px;
     max-width: 100%;
   }
 }
 
+
 @media (max-width: 480px) {
   .home7-root {
     padding: 30px 10px;
     gap: 20px;
   }
+
   .home7-title {
     font-size: 24px;
   }
+
   .home7-sub {
     font-size: 18px;
   }
+
   .home7-item h3 {
     font-size: 14px;
   }
+
   .home7-item p {
     font-size: 12px;
   }
+
   .home7-img {
     height: 220px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .home7-img {
+    height: 260px;
+  }
+}
+
+
+@media (min-width: 600px) and (max-width: 820px) {
+  .home7-root {
+    padding: 45px 20px;
+  }
+
+  .home7-img {
+    height: 340px;
+  }
+
+  .home7-title {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 821px) and (max-width: 1180px) {
+  .home7-root {
+    gap: 35px;
+  }
+
+  .home7-img {
+    height: 420px;
+  }
+
+  .home7-title {
+    font-size: 34px;
+  }
+}
+
+@media (min-width: 1181px) and (max-width: 1368px) {
+  .home7-root {
+    padding: 50px 30px;
+  }
+
+  .home7-img {
+    height: 450px;
+  }
+}
+
+
+@media (max-width: 900px) and (max-height: 600px) {
+  .home7-root {
+    padding: 35px 15px;
+    gap: 20px;
+  }
+
+  .home7-img {
+    height: 240px;
+  }
+
+  .home7-title {
+    font-size: 26px;
+  }
+}
+
+@media (min-width: 1024px) and (max-height: 800px) {
+  .home7-root {
+    max-width: 1200px;
+  }
+
+  .home7-img {
+    height: 420px;
+  }
+}
+
+@media (min-width: 1280px) and (max-height: 900px) {
+  .home7-root {
+    max-width: 1400px;
+  }
+
+  .home7-img {
+    height: 460px;
   }
 }

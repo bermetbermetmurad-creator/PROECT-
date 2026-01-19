@@ -1,10 +1,8 @@
-
 .product-page {
   display: flex;
   justify-content: center;
   padding: 60px 20px;
 }
-
 
 .product {
   display: flex;
@@ -14,6 +12,7 @@
   align-items: flex-start;
   font-family: Arial, sans-serif;
 }
+
 
 .product-images {
   width: 420px;
@@ -31,6 +30,7 @@
   display: flex;
   gap: 12px;
   margin-top: 16px;
+  flex-wrap: wrap;
 }
 
 .thumb {
@@ -53,6 +53,7 @@
   opacity: 1;
 }
 
+
 .product-info {
   max-width: 480px;
 }
@@ -74,9 +75,11 @@
   margin-bottom: 30px;
 }
 
+
 .actions {
   display: flex;
   gap: 16px;
+  flex-wrap: wrap;
 }
 
 .cart {
@@ -100,7 +103,6 @@
 }
 
 
-
 .loading-text {
   font-size: 1.5rem;
   font-weight: bold;
@@ -111,7 +113,6 @@
   animation: pulse 1.5s infinite;
   font-family: 'Arial', sans-serif;
 }
-
 
 @keyframes pulse {
   0% {
@@ -125,5 +126,121 @@
   100% {
     opacity: 0.3;
     transform: scale(0.95);
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .product {
+    gap: 40px;
+  }
+
+  .product-images {
+    width: 380px;
+  }
+
+  .main-image {
+    height: 380px;
+  }
+}
+
+@media (max-width: 992px) {
+  .product {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-images {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .product-info {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .actions {
+    justify-content: center;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .product-page {
+    padding: 40px 16px;
+  }
+
+  .product-info h1 {
+    font-size: 26px;
+  }
+
+  .description {
+    font-size: 15px;
+  }
+
+  .main-image {
+    height: 340px;
+  }
+
+  .thumb {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .product {
+    gap: 30px;
+  }
+
+  .main-image {
+    height: 300px;
+  }
+
+  .product-info h1 {
+    font-size: 22px;
+  }
+
+  .actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cart,
+  .favorite {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 420px) {
+  .main-image {
+    height: 260px;
+  }
+
+  .thumb {
+    width: 60px;
+    height: 60px;
+  }
+
+  .product-info h1 {
+    font-size: 20px;
+  }
+}
+
+
+@media (max-width: 360px) {
+  .product-page {
+    padding: 30px 12px;
+  }
+
+  .main-image {
+    height: 240px;
+  }
+
+  .description {
+    font-size: 14px;
   }
 }
