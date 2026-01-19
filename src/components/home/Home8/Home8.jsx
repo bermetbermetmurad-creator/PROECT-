@@ -16,7 +16,7 @@ export default function Home8() {
         onClick={() => navigate("/natural")}
       >
         <img className="home8-img" src={fonn1} alt="" />
-        <div className="home8-label">Натуральные масла</div>
+        <div className="home8-label">Натуральные Масла</div>
       </div>
 
       <div
