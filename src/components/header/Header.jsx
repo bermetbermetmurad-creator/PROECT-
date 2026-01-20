@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import "./Header.css";
+import "./header.css";
 import logo from "../../assets/Group.png";
 import { IoIosSearch } from "react-icons/io";
 import { FaShoppingCart, FaHeart, FaBars, FaTimes } from "react-icons/fa";
