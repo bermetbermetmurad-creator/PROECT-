@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./catalog2.css";
+import "./Catalog2.css";
 import { Link } from "react-router-dom";
 
 export default function Catalog2() {
