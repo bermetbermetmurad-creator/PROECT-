@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./home8.css";
+import "./Home8.css";
 import fonn1 from '../../../assets/желтый.png'
 import fonn2 from '../../../assets/зеленый.jpg'
 import fonn3 from '../../../assets/шоколад.png'

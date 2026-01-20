@@ -1,7 +1,7 @@
 import React from "react";
 import './home2.css';
-import heroImage from '../../../assets/image.png';
-import heroImagi from '../../../assets/image-2.png';
+import heroImage from '../../../assets/Image.png';
+import heroImagi from '../../../assets/Image-2.png';
 import { Link } from "react-router-dom";
 
 

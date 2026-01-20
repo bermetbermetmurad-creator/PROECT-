@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./home4.css";
+import "./Home4.css";
 import { Link, useNavigate } from "react-router-dom";
 import { FaShoppingCart, FaHeart, FaSearch } from "react-icons/fa";
 import { toast, ToastContainer } from "react-toastify";
