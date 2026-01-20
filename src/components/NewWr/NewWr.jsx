@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./newwr.css";
+import "./Newwr.css";
 import oo1 from '../../assets/oo1.webp'
 import oo2 from '../../assets/oo2.webp'
 import oo3 from '../../assets/oo3.webp'
