@@ -1,0 +1,253 @@
+.waitlist-container {
+  max-width: 1600px;
+  margin: auto;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fdf8 0%, #e8f5e9 100%);
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.waitlist-container::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('https://images.unsplash.com/photo-1551183053-bf91a1d81141?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+.waitlist-header {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 1;
+}
+
+.waitlist-header h1 {
+  font-size: 3rem;
+  color: #2e7d32;
+  margin-bottom: 10px;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+.waitlist-subtitle {
+  font-size: 1.2rem;
+  color: #558b2f;
+  opacity: 0.8;
+}
+
+.waitlist-empty {
+  text-align: center;
+  padding: 60px 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  max-width: 450px;
+  margin: 0 auto;
+  box-shadow: 0 10px 25px rgba(46,125,50,0.15);
+  position: relative;
+  z-index: 1;
+}
+
+.olive-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.waitlist-empty h2 {
+  color: #558b2f;
+  margin-bottom: 25px;
+}
+
+.back-btn {
+  background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+  color: white;
+  border: none;
+  padding: 14px 36px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76,175,80,0.35);
+}
+
+/* Карточки заказов */
+.waitlist-orders {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.order-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  padding: 20px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(46,125,50,0.1);
+}
+
+.order-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.status {
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: white;
+  background: #4caf50;
+  text-transform: uppercase;
+}
+
+/* Контент заказов */
+.order-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  background: #f8fdf8;
+  border-radius: 12px;
+  padding: 10px;
+  gap: 15px;
+  flex: 1 1 45%;
+  border: 1px solid #e8f5e9;
+  transition: all 0.3s ease;
+}
+
+.order-item:hover {
+  transform: translateY(-2px);
+  background: #e8f5e9;
+}
+
+.item-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #c8e6c9;
+}
+
+.item-details h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: #2e7d32;
+}
+
+.item-details p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Footer */
+.order-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.total-price {
+  font-weight: bold;
+  color: #2e7d32;
+  font-size: 1.2rem;
+}
+
+.status-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.status-btn {
+  padding: 6px 12px;
+  border: 2px solid #c8e6c9;
+  border-radius: 20px;
+  cursor: pointer;
+  background: white;
+  color: #558b2f;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.status-btn.active {
+  background: #4caf50;
+  color: white;
+  border-color: #4caf50;
+}
+
+.status-btn:hover:not(.active) {
+  background: #e8f5e9;
+}
+
+.timer {
+  font-size: 0.9rem;
+  color: #333;
+  text-align: right;
+}
+
+.delete-btn {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  background: #ff5252;
+  transform: translateY(-2px);
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .order-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .item-image {
+    margin-bottom: 8px;
+  }
+  
+  .status-buttons {
+    justify-content: center;
+  }
+  
+  .timer {
+    text-align: center;
+  }
+}

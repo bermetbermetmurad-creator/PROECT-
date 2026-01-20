@@ -19,9 +19,7 @@ import AboutCart2 from "./components/AboutCart/AboutCart2";
 import OffersPage from "./components/OffersPage/OffersPage";
 import MyComponent from "./components/MyComponent/MyComponent";
 import Checkout from "./components/Checkout";
-
-
-
+import WaitList from "./components/WaitList"; 
 
 export const muRouter = createBrowserRouter([
     {
@@ -118,8 +116,12 @@ export const muRouter = createBrowserRouter([
             },
             {
                 path: '/checkout',
-                element: <Checkout/>
-            },   
+                element: <Checkout />
+            },
+            {
+                path: '/waitlist', 
+                element: <WaitList />
+            },
         ]
     }
 ])

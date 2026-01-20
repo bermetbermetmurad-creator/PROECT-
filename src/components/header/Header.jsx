@@ -23,7 +23,7 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // 🔍 поиск
+
   const [searchText, setSearchText] = useState("");
   const [products, setProducts] = useState([]);
   const [showAlert, setShowAlert] = useState(false);
@@ -68,9 +68,26 @@ const Header = () => {
     0
   );
 
+  // 🌍 переводы
   const t = {
-    ru: { about: "О нас", catalog: "КАТАЛОГ", catalogHome: "Главная", catalogProducts: "Товары", news: "Новости", searchPlaceholder: "Поиск..." },
-    en: { about: "About", catalog: "CATALOG", catalogHome: "Home", catalogProducts: "Products", news: "News", searchPlaceholder: "Search..." },
+    ru: {
+      about: "О нас",
+      catalog: "КАТАЛОГ",
+      catalogHome: "Главная",
+      catalogProducts: "Товары",
+      news: "Новости",
+      waitlist: "Лист ожидания",
+      searchPlaceholder: "Поиск...",
+    },
+    en: {
+      about: "About",
+      catalog: "CATALOG",
+      catalogHome: "Home",
+      catalogProducts: "Products",
+      news: "News",
+      waitlist: "Waiting List",
+      searchPlaceholder: "Search...",
+    },
   };
 
   const handleRegister = (name) => {
@@ -93,20 +110,50 @@ const Header = () => {
           <Link to="/" className="logo-text">Belaléa</Link>
         </div>
 
-        <button className="mobile-menu-btn" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+        <button
+          className="mobile-menu-btn"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
           {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
         </button>
 
         <nav className={`nav-links ${isMobileMenuOpen ? "mobile-open" : ""}`}>
-          <Link to="/about" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>{t[language].about}</Link>
+          <Link
+            to="/about"
+            className="nav-link"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            {t[language].about}
+          </Link>
+
           <div className="dropdown">
             <span className="dropbtn">{t[language].catalog}</span>
             <div className="dropdown-content">
-              <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>{t[language].catalogHome}</Link>
-              <Link to="/catalog" onClick={() => setIsMobileMenuOpen(false)}>{t[language].catalogProducts}</Link>
+              <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
+                {t[language].catalogHome}
+              </Link>
+              <Link to="/catalog" onClick={() => setIsMobileMenuOpen(false)}>
+                {t[language].catalogProducts}
+              </Link>
             </div>
           </div>
-          <Link to="/news" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>{t[language].news}</Link>
+
+          <Link
+            to="/news"
+            className="nav-link"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            {t[language].news}
+          </Link>
+
+          
+          <Link
+            to="/waitlist"
+            className="nav-link"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            {t[language].waitlist}
+          </Link>
         </nav>
 
         <div className="search-contact">
@@ -130,13 +177,19 @@ const Header = () => {
 
           <button className="favorite-btn" onClick={() => setIsFavoriteOpen(true)}>
             <FaHeart />
-            {favorites.length > 0 && <span className="favorite-count">{favorites.length}</span>}
+            {favorites.length > 0 && (
+              <span className="favorite-count">{favorites.length}</span>
+            )}
           </button>
 
           {!userName ? (
-            <button className="login-btn" onClick={() => setIsRegisterOpen(true)}>Войти</button>
+            <button className="login-btn" onClick={() => setIsRegisterOpen(true)}>
+              Войти
+            </button>
           ) : (
-            <button className="login-btn" onClick={() => setIsProfileOpen(true)}>Профиль</button>
+            <button className="login-btn" onClick={() => setIsProfileOpen(true)}>
+              Профиль
+            </button>
           )}
         </div>
       </header>
@@ -147,8 +200,18 @@ const Header = () => {
         </div>
       )}
 
-      <RegisterModal isOpen={isRegisterOpen} onClose={() => setIsRegisterOpen(false)} onRegister={handleRegister} />
-      <ProfileModal isOpen={isProfileOpen} onClose={() => setIsProfileOpen(false)} userName={userName} onLogout={handleLogout} />
+      <RegisterModal
+        isOpen={isRegisterOpen}
+        onClose={() => setIsRegisterOpen(false)}
+        onRegister={handleRegister}
+      />
+
+      <ProfileModal
+        isOpen={isProfileOpen}
+        onClose={() => setIsProfileOpen(false)}
+        userName={userName}
+        onLogout={handleLogout}
+      />
     </>
   );
 };
