@@ -1,5 +1,5 @@
 import React from 'react';
-import './Footer.css';
+import './footer.css';
 import logo2 from '../../assets/Group2.png'
 import insta from '../../assets/insta.png'
 import fasbook from '../../assets/fasbook.png'
