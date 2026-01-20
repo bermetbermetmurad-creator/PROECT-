@@ -1,7 +1,7 @@
 import React from "react";
 import "./about2.css";
 import about2 from '../../../assets/about2.png'
-import about22 from '../../../assets/icon.svg'
+import about22 from '../../../assets/Icon.svg'
 import about222 from '../../../assets/Chemical Plant.png'
 import { useNavigate } from "react-router-dom";
 
