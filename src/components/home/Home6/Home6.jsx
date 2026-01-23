@@ -8,6 +8,13 @@ import buter3 from "../../../assets/buter3.webp";
 import { Link } from "react-router-dom";
 
 export default function Home6() {
+  const products = [
+    { img: buter, name: "Масло тыквенное", volume: "250мл", tag: "Масла" },
+    { img: buter1, name: "Масло льняное", volume: "300мл", tag: "Масла" },
+    { img: buter2, name: "Масло оливковое", volume: "500мл", tag: "Масла" },
+    { img: buter3, name: "Масло кунжутное", volume: "200мл", tag: "Масла" },
+  ];
+
   return (
     <div className="home6-container">
       <h2 className="home6-title">Лучшие предложения месяца</h2>
@@ -17,15 +24,17 @@ export default function Home6() {
       </Link>
 
       <div className="home6-cards">
-        {[buter, buter1, buter2, buter3].map((img, i) => (
+        {products.map((product, i) => (
           <div className="home6-card" key={i}>
-            <span className="tag">Масла</span>
+            <span className="tag">{product.tag}</span>
 
             <div className="img-box">
-              <img src={img} alt="product" />
+              <img src={product.img} alt={product.name} />
             </div>
 
-            <p className="product-text">Масло тыквенное, 250мл</p>
+            <p className="product-text">
+              {product.name}, {product.volume}
+            </p>
           </div>
         ))}
       </div>

@@ -1,60 +1,40 @@
 import React, { useState } from "react";
-import { FcGoogle } from "react-icons/fc";
+import defaultAvatar from "../assets/awatar.jpg";
 import "./RegisterModal.css";
 
-const RegisterModal = ({ isOpen, onClose, onRegister }) => {
-  const [formData, setFormData] = useState({
-    name: "",
+const RegisterModal = ({ isOpen, onClose, onRegister, onLogin }) => {
+  const [activeTab, setActiveTab] = useState("login");
+  const [loginData, setLoginData] = useState({ email: "", password: "" });
+  const [registerData, setRegisterData] = useState({
+    firstName: "",
+    lastName: "",
     email: "",
     password: "",
   });
 
-  const handleChange = (e) => {
-    let value = e.target.value;
-
-    if (e.target.name === "password") {
-      value = value.slice(0, 6);
+  const handleChange = (e, type) => {
+    const { name, value } = e.target;
+    if (type === "login") {
+      setLoginData({ ...loginData, [name]: value });
+    } else {
+      setRegisterData({ ...registerData, [name]: value });
     }
-
-    setFormData({ ...formData, [e.target.name]: value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleLoginSubmit = (e) => {
     e.preventDefault();
+    if (onLogin) onLogin(loginData);
+  };
 
-    try {
-      await fetch("https://jsonplaceholder.typicode.com/posts", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-    } catch (error) {
-      console.error("API error:", error);
-    }
-
-    onRegister(formData.name);
-
-    setFormData({ name: "", email: "", password: "" });
-
-    const alertDiv = document.createElement("div");
-    alertDiv.textContent = "Успешно";
-    alertDiv.style.position = "fixed";
-    alertDiv.style.top = "20px";
-    alertDiv.style.right = "20px";
-    alertDiv.style.background = "#4CAF50";
-    alertDiv.style.color = "white";
-    alertDiv.style.padding = "15px 20px";
-    alertDiv.style.borderRadius = "10px";
-    alertDiv.style.boxShadow = "0 2px 6px rgba(0,0,0,0.2)";
-    alertDiv.style.zIndex = 10000;
-    alertDiv.style.fontWeight = "bold";
-    document.body.appendChild(alertDiv);
-
-    setTimeout(() => {
-      alertDiv.remove();
-    }, 3000);
+  const handleRegisterSubmit = (e) => {
+    e.preventDefault();
+    if (onRegister) onRegister({
+      name: `${registerData.firstName} ${registerData.lastName}`,
+      email: registerData.email,
+      password: registerData.password, 
+      avatar: defaultAvatar,
+      bio: "Frontend developer",
+    });
   };
 
   if (!isOpen) return null;
@@ -62,43 +42,80 @@ const RegisterModal = ({ isOpen, onClose, onRegister }) => {
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-        <button className="close-btn" onClick={onClose}>
-          ×
-        </button>
-        <h2>Войти</h2>
+        <button className="close-btn" onClick={onClose}>×</button>
 
-        <form onSubmit={handleSubmit} className="register-form">
-          <input
-            type="text"
-            name="name"
-            placeholder="Имя"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-
-          <input
-            type="password"
-            name="password"
-            placeholder="Пароль"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-
-          <button type="submit" className="register-btn">
+        <div className="tabs">
+          <button
+            type="button"
+            className={activeTab === "login" ? "active" : ""}
+            onClick={() => setActiveTab("login")}
+          >
             Войти
           </button>
-        </form>
+          <button
+            type="button"
+            className={activeTab === "register" ? "active" : ""}
+            onClick={() => setActiveTab("register")}
+          >
+            Регистрация
+          </button>
+        </div>
+
+        {activeTab === "login" ? (
+          <form onSubmit={handleLoginSubmit} className="register-form">
+            <input
+              name="email"
+              type="email"
+              placeholder="Email"
+              value={loginData.email}
+              onChange={(e) => handleChange(e, "login")}
+              required
+            />
+            <input
+              name="password"
+              type="password"
+              placeholder="Пароль"
+              value={loginData.password}
+              onChange={(e) => handleChange(e, "login")}
+              required
+            />
+            <button type="submit" className="register-btn">Войти</button>
+          </form>
+        ) : (
+          <form onSubmit={handleRegisterSubmit} className="register-form">
+            <input
+              name="firstName"
+              placeholder="Имя"
+              value={registerData.firstName}
+              onChange={(e) => handleChange(e, "register")}
+              required
+            />
+            <input
+              name="lastName"
+              placeholder="Фамилия"
+              value={registerData.lastName}
+              onChange={(e) => handleChange(e, "register")}
+              required
+            />
+            <input
+              name="email"
+              type="email"
+              placeholder="Email"
+              value={registerData.email}
+              onChange={(e) => handleChange(e, "register")}
+              required
+            />
+            <input
+              name="password"
+              type="password"
+              placeholder="Пароль"
+              value={registerData.password}
+              onChange={(e) => handleChange(e, "register")}
+              required
+            />
+            <button type="submit" className="register-btn">Зарегистрироваться</button>
+          </form>
+        )}
       </div>
     </div>
   );

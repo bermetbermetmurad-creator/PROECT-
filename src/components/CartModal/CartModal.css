@@ -53,6 +53,10 @@
 }
 
 .clear-btn {
+  position: absolute;
+  position: relative;
+  top: 30px;
+  left: 8px;
   background: #fee2e2;
   border: none;
   width: 32px;

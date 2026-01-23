@@ -26,102 +26,29 @@ export const muRouter = createBrowserRouter([
         path: '/',
         element: <Layout />,
         children: [
-            {
-                path: '/',
-                element: <Home />
-            },
-            {
-                path: 'about',
-                element: <About />
-            },
-            {
-                path: 'catalog',
-                element: <Catalog />
-            },
-            {
-                path: 'catalog/:id',
-                element: <Product />
-            },
-            {
-                path: 'news',
-                element: <News />
-            },
-            {
-                path: 'home/catalog',
-                element: <Catalog />
-            },
-            {
-                path: '/discounts',
-                element: <Discounts />
-            },
-            {
-                path: '/new',
-                element: <NewProducts />
-            },
-            {
-                path: 'home/about',
-                element: <About />
-            },
-            {
-                path: 'cart',
-                element: <CartModal />
-            },
-            {
-                path: 'natural',
-                element: <Natural />
-            },
-            {
-                path: "newwr",
-                element: <NewWr />
-            },
-            {
-                path: "muka",
-                element: <Muka />
-            },
-            {
-                path: "news/:id",
-                element: <Neww1 />
-            },
-            {
-                path: "contact",
-                element: <Contact />
-            },
-            {
-                path: "aboutcart",
-                element: <AboutCart />
-            },
-            {
-                path: "aboutcart1",
-                element: <AboutCart1 />
-            },
-            {
-                path: "aboutcart2",
-                element: <AboutCart2 />
-            },
-            {
-                path: "offers-page",
-                element: <OffersPage />
-            },
-            {
-                path: 'product/:id',
-                element: <Product />
-            },
-            {
-                path: 'catalog',
-                element: <MyComponent />
-            },
-            {
-                path: 'mycomp',
-                element: <MyComponent />
-            },
-            {
-                path: '/checkout',
-                element: <Checkout />
-            },
-            {
-                path: '/waitlist', 
-                element: <WaitList />
-            },
+            { path: '', element: <Home /> },
+            { path: 'about', element: <About /> },
+            { path: 'catalog', element: <Catalog /> },
+            { path: 'catalog/:id', element: <Product /> },
+            { path: 'news', element: <News /> },
+            { path: 'home/catalog', element: <Catalog /> },
+            { path: 'discounts', element: <Discounts /> },
+            { path: 'new', element: <NewProducts /> },
+            { path: 'home/about', element: <About /> },
+            { path: 'cart', element: <CartModal /> },
+            { path: 'natural', element: <Natural /> },
+            { path: "newwr", element: <NewWr /> },
+            { path: "muka", element: <Muka /> },
+            { path: "news/:id", element: <Neww1 /> },
+            { path: "contact", element: <Contact /> },
+            { path: "aboutcart", element: <AboutCart /> },
+            { path: "aboutcart1", element: <AboutCart1 /> },
+            { path: "aboutcart2", element: <AboutCart2 /> },
+            { path: "offers-page", element: <OffersPage /> },
+            { path: 'product/:id', element: <Product /> },
+            { path: 'mycomp', element: <MyComponent /> },
+            { path: 'checkout', element: <Checkout /> },  
+            { path: 'waitlist', element: <WaitList /> }   
         ]
     }
-])
+]);

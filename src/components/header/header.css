@@ -232,6 +232,16 @@
   border-bottom: 1px solid rgba(234, 234, 234, 0.9);
 }
 
+.header-avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid #fff;
+  margin-left: 10px;
+}
+
 
 @keyframes slideDown {
   from {
@@ -283,6 +293,7 @@
 .header-spacer.scrolled {
   height: 60px;
 }
+
 
 .custom-alert {
   position: fixed;
@@ -442,9 +453,7 @@
 }
 
 
-/* ... существующие стили остаются ... */
 
-/* Гамбургер-кнопка */
 .mobile-menu-btn {
   display: none;
   background: none;

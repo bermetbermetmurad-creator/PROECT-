@@ -1,143 +1,128 @@
 .checkout {
-  max-width: 600px;
-  margin: 60px auto;
-  padding: 35px;
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
-  font-family: 'Segoe UI', sans-serif;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 128, 0, 0.08);
+  font-family: "Arial", sans-serif;
 }
 
 .checkout h2 {
   text-align: center;
-  margin-bottom: 30px;
+  color: #1b7f3a;
+  margin-bottom: 25px;
   font-size: 28px;
-  color: #111;
 }
 
+.alert {
+  padding: 14px 18px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.alert-error {
+  background: #ffecec;
+  color: #c0392b;
+  border: 1px solid #f5b7b1;
+}
+
+.alert-success {
+  background: #eafaf1;
+  color: #1e8449;
+  border: 1px solid #a9dfbf;
+}
 
 .checkout-items {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-bottom: 20px;
+  gap: 14px;
+  margin-bottom: 25px;
 }
 
 .checkout-item {
   display: flex;
   align-items: center;
   gap: 15px;
-  padding: 10px;
-  border: 1px solid #eee;
-  border-radius: 10px;
-  background: #f9f9f9;
+  padding: 12px;
+  background: #f9fdfb;
+  border: 1px solid #d4efdf;
+  border-radius: 12px;
 }
 
 .checkout-item img {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   object-fit: cover;
-  border-radius: 8px;
-}
-
-.item-info p {
-  margin: 2px 0;
-  font-size: 14px;
-}
-
-/* Форма */
-.checkout-form {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.checkout-form label {
-  display: flex;
-  flex-direction: column;
-  font-weight: 500;
-  color: #333;
-  font-size: 14px;
-}
-
-.checkout-form input,
-.checkout-form select {
-  margin-top: 6px;
-  padding: 12px 14px;
-  font-size: 16px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  transition: border 0.2s, box-shadow 0.2s;
-}
-
-.checkout-form input:focus,
-.checkout-form select:focus {
-  outline: none;
-  border-color: #4f46e5;
-  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
-}
-
-/* Итог и кнопка */
-.checkout-summary {
-  display: flex;
-  justify-content: space-between;
-  font-weight: bold;
-  font-size: 16px;
-  margin-top: 10px;
-  padding-top: 10px;
-  border-top: 1px solid #ddd;
-}
-
-.checkout-btn {
-  margin-top: 15px;
-  padding: 15px;
-  font-size: 16px;
-  background: #10b981;
-  color: #fff;
-  border: none;
   border-radius: 10px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.2s, transform 0.1s;
+  border: 1px solid #d5f5e3;
 }
 
-.checkout-btn:hover {
-  background: #059669;
-}
-
-.checkout-btn:active {
-  transform: scale(0.97);
-}
-
-
-.alert {
-  padding: 12px 15px;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  font-weight: 500;
+.checkout-item p {
+  margin: 2px 0;
+  color: #145a32;
   font-size: 14px;
 }
 
-.alert-success {
-  background-color: #d1fae5;
-  color: #065f46;
-  border: 1px solid #10b981;
+.checkout form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
-.alert-error {
-  background-color: #fee2e2;
-  color: #b91c1c;
-  border: 1px solid #f87171;
+.checkout input,
+.checkout select {
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #d5f5e3;
+  font-size: 15px;
+  outline: none;
+  transition: 0.2s;
+  background: #ffffff;
 }
 
+.checkout input:focus,
+.checkout select:focus {
+  border-color: #2ecc71;
+  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.15);
+}
+
+.checkout button {
+  margin-top: 10px;
+  padding: 15px;
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.checkout button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(39, 174, 96, 0.35);
+}
+
+
+.checkout input[maxlength] {
+  letter-spacing: 2px;
+}
 
 @media (max-width: 600px) {
   .checkout {
-    margin: 20px;
-    padding: 25px;
+    padding: 20px;
   }
+
+  .checkout-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
   .checkout-item img {
-    width: 50px;
-    height: 50px;
+    width: 90px;
+    height: 90px;
   }
 }

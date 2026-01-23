@@ -8,6 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { LanguageContext } from "../LanguageContext/LanguageContext.jsx";
 import { useCart } from "../CartContext/CartContext.jsx";
 import { useFavorite } from "../FavoriteContext.jsx";
+import { useUser } from "../UserContext/UserContext.jsx";
 
 import RegisterModal from "../RegisterModal.jsx";
 import ProfileModal from "../ProfileModal.jsx";
@@ -16,13 +17,12 @@ const Header = () => {
   const { language } = useContext(LanguageContext);
   const { cartItems, setIsCartOpen } = useCart();
   const { favorites, setIsFavoriteOpen } = useFavorite();
+  const { user, updateUser, logout } = useUser();
 
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
-  const [userName, setUserName] = useState("");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-
 
   const [searchText, setSearchText] = useState("");
   const [products, setProducts] = useState([]);
@@ -30,45 +30,6 @@ const Header = () => {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const storedUser = localStorage.getItem("userName");
-    if (storedUser) setUserName(storedUser);
-  }, []);
-
-  useEffect(() => {
-    fetch("https://691a97112d8d7855756f513a.mockapi.io/myApi")
-      .then(res => res.json())
-      .then(data => setProducts(data))
-      .catch(err => console.log(err));
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const handleSearch = () => {
-    const query = searchText.trim().toLowerCase();
-    if (!query) return;
-
-    const found = products.find(p => p.name.toLowerCase() === query);
-
-    if (found) {
-      navigate(`/catalog/${found.id}`);
-      setSearchText("");
-    } else {
-      setShowAlert(true);
-      setTimeout(() => setShowAlert(false), 2500);
-    }
-  };
-
-  const cartCount = cartItems.reduce(
-    (sum, item) => sum + (item.quantity || 1),
-    0
-  );
-
-  // 🌍 переводы
   const t = {
     ru: {
       about: "О нас",
@@ -90,16 +51,38 @@ const Header = () => {
     },
   };
 
-  const handleRegister = (name) => {
-    setUserName(name);
-    localStorage.setItem("userName", name);
-    setIsRegisterOpen(false);
+  useEffect(() => {
+    fetch("https://691a97112d8d7855756f513a.mockapi.io/myApi")
+      .then(res => res.json())
+      .then(data => setProducts(data))
+      .catch(err => console.log(err));
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleSearch = () => {
+    const query = searchText.trim().toLowerCase();
+    if (!query) return;
+
+    const found = products.find(p => p.name.toLowerCase() === query);
+    if (found) {
+      navigate(`/catalog/${found.id}`);
+      setSearchText("");
+    } else {
+      setShowAlert(true);
+      setTimeout(() => setShowAlert(false), 2500);
+    }
   };
 
-  const handleLogout = () => {
-    setUserName("");
-    localStorage.removeItem("userName");
-    setIsProfileOpen(false);
+  const cartCount = cartItems.reduce((sum, item) => sum + (item.quantity || 1), 0);
+
+  const handleRegister = (userData) => {
+    updateUser(userData);
+    setIsRegisterOpen(false);
   };
 
   return (
@@ -118,11 +101,7 @@ const Header = () => {
         </button>
 
         <nav className={`nav-links ${isMobileMenuOpen ? "mobile-open" : ""}`}>
-          <Link
-            to="/about"
-            className="nav-link"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
+          <Link to="/about" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>
             {t[language].about}
           </Link>
 
@@ -138,20 +117,11 @@ const Header = () => {
             </div>
           </div>
 
-          <Link
-            to="/news"
-            className="nav-link"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
+          <Link to="/news" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>
             {t[language].news}
           </Link>
 
-          
-          <Link
-            to="/waitlist"
-            className="nav-link"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
+          <Link to="/waitlist" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>
             {t[language].waitlist}
           </Link>
         </nav>
@@ -165,10 +135,7 @@ const Header = () => {
             onChange={(e) => setSearchText(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSearch()}
           />
-
-          <button className="search-btn" onClick={handleSearch}>
-            <IoIosSearch />
-          </button>
+          <button className="search-btn" onClick={handleSearch}><IoIosSearch /></button>
 
           <button className="cart-btn" onClick={() => setIsCartOpen(true)}>
             <FaShoppingCart />
@@ -177,40 +144,47 @@ const Header = () => {
 
           <button className="favorite-btn" onClick={() => setIsFavoriteOpen(true)}>
             <FaHeart />
-            {favorites.length > 0 && (
-              <span className="favorite-count">{favorites.length}</span>
-            )}
+            {favorites.length > 0 && <span className="favorite-count">{favorites.length}</span>}
           </button>
 
-          {!userName ? (
-            <button className="login-btn" onClick={() => setIsRegisterOpen(true)}>
-              Войти
-            </button>
+          {!user ? (
+            <button className="login-btn" onClick={() => setIsRegisterOpen(true)}>Войти</button>
           ) : (
-            <button className="login-btn" onClick={() => setIsProfileOpen(true)}>
-              Профиль
-            </button>
+            <img
+              src={user.avatar}
+              alt="avatar"
+              className="header-avatar"
+              onClick={() => setIsProfileOpen(true)}
+            />
           )}
         </div>
       </header>
 
-      {showAlert && (
-        <div className="custom-alert">
-          ❌ Продукт не найден
-        </div>
-      )}
+      {showAlert && <div className="custom-alert">❌ Продукт не найден</div>}
 
       <RegisterModal
-        isOpen={isRegisterOpen}
-        onClose={() => setIsRegisterOpen(false)}
-        onRegister={handleRegister}
-      />
+  isOpen={isRegisterOpen}
+  onClose={() => setIsRegisterOpen(false)}
+  onRegister={handleRegister}
+  onLogin={(loginData) => {
+    
+    const user = {
+      name: "Тестовый пользователь",
+      email: loginData.email,
+      password: loginData.password,
+      avatar: "path_to_default_avatar.jpg",
+      bio: "Frontend developer",
+    };
+    updateUser(user); 
+    setIsRegisterOpen(false); 
+  }}
+/>
+
+
 
       <ProfileModal
         isOpen={isProfileOpen}
         onClose={() => setIsProfileOpen(false)}
-        userName={userName}
-        onLogout={handleLogout}
       />
     </>
   );

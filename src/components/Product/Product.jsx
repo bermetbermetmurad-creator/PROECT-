@@ -4,13 +4,31 @@ import "./product.css";
 import { toast } from "react-toastify";
 import { useCart } from "../CartContext/CartContext.jsx";
 import { useFavorite } from "../FavoriteContext.jsx";
+import { useUser } from "../UserContext/UserContext.jsx";
 
 const API_URL = "https://691a97112d8d7855756f513a.mockapi.io/myApi";
+
+
+const getPriceById = (id) => {
+  const prices = {
+    "1": 1200,
+    "2": 950,
+    "3": 1800,
+    "4": 700,
+    "5": 1500,
+    "6": 2200,
+    "7": 1300,
+    "8": 890,
+  };
+
+  return prices[id] || 999; 
+};
 
 export default function Product() {
   const { id } = useParams();
   const { addToCart } = useCart();
   const { addFavorite } = useFavorite();
+  const { user } = useUser();
 
   const [product, setProduct] = useState(null);
   const [gallery, setGallery] = useState([]);
@@ -22,6 +40,7 @@ export default function Product() {
       .then(res => res.json())
       .then(data => {
         setAllProducts(data);
+
         const current = data.find(item => item.id === id);
         if (!current) return;
 
@@ -47,12 +66,36 @@ export default function Product() {
     setGallery(related);
   };
 
+  const openLoginModal = () => {
+    const loginBtn = document.querySelector(".login-btn");
+    if (loginBtn) loginBtn.click();
+  };
+
   const handleFavorite = () => {
+    if (!user) {
+      toast.error("Сначала войдите в аккаунт");
+      openLoginModal();
+      return;
+    }
+
     addFavorite(product);
   };
 
   const addProduct = () => {
-    addToCart(product);
+    if (!user) {
+      toast.error("Сначала войдите или зарегистрируйтесь");
+      openLoginModal();
+      return;
+    }
+
+    const price = Number(product.price || getPriceById(product.id));
+
+    addToCart({
+      ...product,
+      price,
+      quantity: 1,
+    });
+
     toast.success("Товар добавлен в корзину!", {
       position: "top-right",
     });
@@ -76,7 +119,11 @@ export default function Product() {
                 key={item.id}
                 src={item.img || item.avatar}
                 alt={item.name}
-                className={activeImage === (item.img || item.avatar) ? "thumb active" : "thumb"}
+                className={
+                  activeImage === (item.img || item.avatar)
+                    ? "thumb active"
+                    : "thumb"
+                }
                 onClick={() => handleThumbClick(item)}
               />
             ))}
@@ -86,6 +133,11 @@ export default function Product() {
         <div className="product-info">
           <h1>{product.name}</h1>
           <span className="category">{product.job}</span>
+
+
+          <div className="price">
+            {getPriceById(product.id).toLocaleString()} ₽
+          </div>
 
           <p className="description">
             {product.name} — это качественный и надежный продукт из категории «{product.job}»,
